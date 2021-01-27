@@ -1,0 +1,437 @@
+/* Variables */
+$main-font: 'Rubik', sans-serif;
+$text-line-height: 1.5;
+$background-color: #ffffff;
+$accent-color-blue: #5266df;
+$accent-color-red: #ff5659;
+$heading-color: #262b48;
+$text-color-grey: #919191;
+$footer-color: #242946;
+
+/* Reset */
+body, p, a, ul, li {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: $main-font;
+  list-style: none;
+}
+
+/* Base styles */
+body {
+  overflow-x: hidden;
+  font-size: 18px;
+  font-family: $main-font;
+}
+
+/* Mobile styles */
+.container {
+  width: 85vw;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__ul {
+    display: flex;
+  }
+
+  &__li {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    color: $heading-color;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-color-red;
+    }
+
+    &--login {
+      color: $background-color;
+      background-color: $accent-color-red;
+      border-radius: 5px;
+      padding: 0.5rem 1.25rem;
+      margin-left: 1rem;
+      transition: .15s ease-in-out;
+
+      &:hover {
+        background-color: $background-color;
+        color: $accent-color-red;
+        box-shadow: 0 0 0 1px $accent-color-red;
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  &__text {
+    order: 2;
+  }
+
+  &__img img {
+    order: 1;
+    width: 360px;
+    margin-top: 1rem;
+  }
+
+  &__h1 {
+    color: $heading-color;
+    font-weight: 500;
+    margin-top: 2rem;
+  }
+
+  &__paragraph {
+    color: $text-color-grey;
+    font-family: $main-font;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: $text-line-height;
+    margin-top: -0.5rem;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+
+
+    &--chrome {
+      color:  $background-color;
+      background-color: $accent-color-blue;
+    }
+
+    &--firefox {
+      color: $heading-color;
+      background-color: rgb(243, 242, 236);
+    }
+  }
+}
+
+.shape {
+  position: absolute;
+  background-color: $accent-color-blue;
+  z-index: -1;
+  border-bottom-left-radius: 25%;
+}
+
+.hero__bgshape {
+  width: 290px;
+  height: 200px;
+  top: 165px;
+  right: 0px;
+}
+
+.features {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &__h2 {
+    color: $heading-color;
+    font-weight: 500;
+    margin-top: 8rem;
+    font-size: 1.5rem;
+  }
+
+  &__paragraph {
+    color: $text-color-grey;
+    font-family: $main-font;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: $text-line-height;
+    margin-top: -0.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .tablinks {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    width: 100%;
+    cursor: pointer;
+
+    &:first-of-type {
+      border-top: 1px solid rgb(211, 211, 211);
+    }
+  
+    &:hover::after {
+      width: 30%;
+      height: 4px;
+      background-color: $accent-color-red;
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 13px auto 0 auto;
+    }
+  }
+  .active:after {
+    width: 30%;
+    height: 4px;
+    background-color: $accent-color-red;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 13px auto 0 auto;
+  }
+
+  .tabcontent {
+
+    img {
+      display: inline-block;
+      width: 100%;
+      margin-top:4.5rem;
+      z-index: -1;
+    }
+
+    &__h3 {
+      color: $heading-color;
+      font-weight: 500;
+    }
+
+    &__paragraph {
+      color: $text-color-grey;
+      font-size: 13px;
+      line-height: $text-line-height;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.download {
+  margin-top: 8rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__h2 {
+    color: $heading-color;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  &__paragraph {
+    color: $text-color-grey;
+    font-size: 13px;
+    line-height: $text-line-height;
+    margin-bottom: 1.5rem;
+    margin-top: -0.25rem;
+  }
+
+  &__cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 24px -10px rgb(128, 128, 128);
+    text-align: center;
+    padding: 5rem 1rem 2rem 1rem;
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+
+  &__title {
+    color: $heading-color;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: .3rem;
+  }
+
+  &__version {
+    color: $text-color-grey;
+    font-size: 13px;
+    margin-bottom: 2.5rem;
+  }
+
+  &__dots {
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    background-color: $accent-color-blue;
+    padding: .8rem 2rem;
+    color: $background-color;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__h2 {
+    text-align: center;
+    color: $heading-color;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  &__paragraph {
+    text-align: center;
+    color: $text-color-grey;
+    font-size: 13px;
+    line-height: $text-line-height;
+    margin-bottom: 2.5rem;
+  }
+
+  &__accordion {
+    background-color: $background-color;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-weight: 500;
+    font-family: $main-font;
+    font-size: 13px;
+
+    &::before {
+      content: '+';
+      font-size: 20px;
+      color: $accent-color-blue;
+      font-weight: bold;
+      margin-left: 5px;
+      float: right;
+    }
+
+    &::after {
+      width: 70%;
+      height: 1px;
+      background-color: rgb(196, 196, 196);
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 13px 0 0 3rem;
+    }
+  }
+
+  .active::before {
+    content: '-';
+    color: $accent-color-red;
+  }
+
+  &__panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #555;
+    line-height: $text-line-height;
+  }
+
+  &__link {
+    margin-top: 2rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: $accent-color-blue;
+    color: $background-color;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 620px) {
+
+}
+
+/* Laptop styles */
+@media screen and (min-width: 960px) {
+  
+}
+
+/* Large display styles */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 75vw;
+    margin: 0 auto;
+  }
+  
+  .navbar {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: $background-color;
+  
+    &__ul {
+      display: flex;
+    }
+  
+    &__li {
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      color: $heading-color;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      cursor: pointer;
+  
+      &:hover {
+        color: $accent-color-red;
+      }
+  
+      &--login {
+        color: $background-color;
+        background-color: $accent-color-red;
+        border-radius: 5px;
+        padding: 0.5rem 1.25rem;
+        margin-left: 1rem;
+        transition: .15s ease-in-out;
+  
+        &:hover {
+          background-color: $background-color;
+          color: $accent-color-red;
+          box-shadow: 0 0 0 1px $accent-color-red;
+        }
+      }
+    }
+  }
+}

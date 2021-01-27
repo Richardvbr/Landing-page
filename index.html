@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href=/styles/style.css>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <title>Bookmark Manager</title>
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <a href="#"><img src="/images/logo-bookmark.svg"
+            alt="bookmark logo"></a>
+      </div>
+      <!-- <div class="navbar__ul">
+        <a href="#">
+          <li class="navbar__li">Features</li>
+        </a>
+        <a href="#">
+          <li class="navbar__li">Pricing</li>
+        </a>
+        <a href="#">
+          <li class="navbar__li">Contact</li>
+        </a>
+        <a href="#">
+          <li class="navbar__li navbar__li--login">Login</li>
+        </a>
+      </div> -->
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero__text">
+        <h1 class="hero__h1">A Simple Bookmark Manager</h1>
+        <p class="hero__paragraph"> A clean and simple interface to organize
+          your
+          favourite websites. Open a new browser tab and see your sites load
+          instantly. Try it for free.
+        </p>
+        <div class="hero__links">
+          <a href="#" class="hero__link hero__link--chrome">
+            Get it on Chrome</a>
+          <a href="#" class="hero__link hero__link--firefox">
+            Get it on Firefox</a>
+        </div>
+      </div>
+      <div class="hero__img">
+        <img src="/images/illustration-hero.svg" alt="hero illustration">
+      </div>
+    </section>
+
+    <!-- Background shape hero section -->
+    <div class="shape hero__bgshape"></div>
+
+    <!-- Features section -->
+    <section class="features">
+      <h2 class="features__h2">Features</h2>
+      <p class="features__paragraph"> Our aim is to make it quick and easy for
+        you to access your favourite
+        websites.
+        Your bookmarks sync between your devices so you can access them on the
+        go.</p>
+      <!-- Clickable tabs that reveal content -->
+      <div class="features__bookmarking tablinks" id="defaultOpen"
+        onclick="openTabs(event, 'Bookmarking')">Simple Bookmarking</div>
+      <div class="features__searching tablinks"
+        onclick="openTabs(event, 'Searching')">Speedy Searching</div>
+      <div class="features__sharing tablinks"
+        onclick="openTabs(event, 'Sharing')">
+        Easy Sharing</div>
+
+      <!-- Bookmarking -->
+      <div id="Bookmarking" class="tabcontent">
+        <img src="/images/illustration-features-tab-1.svg" alt="">
+        <h3 class="tabcontent__h3">Bookmark in one click</h3>
+        <p class="tabcontent__paragraph">Organize your bookmarks however you
+          like. Our simple drag-and-drop
+          interface
+          gives you complete control over how you manage your favourite sites.
+        </p>
+        <a href="#" class="hero__link hero__link--chrome">
+          More info</a>
+      </div>
+
+      <!-- Searching -->
+      <div id="Searching" class="tabcontent">
+        <img src="/images/illustration-features-tab-2.svg" alt="">
+        <h3 class="tabcontent__h3">Intelligent search</h3>
+        <p class="tabcontent__paragraph">Our powerful search feature will help
+          you find saved sites in no time
+          at all.
+          No need to trawl through all of your bookmarks.</p>
+        <a href="#" class="hero__link hero__link--chrome">
+          More info</a>
+      </div>
+
+      <!-- Sharing -->
+      <div id="Sharing" class="tabcontent">
+        <img src="/images/illustration-features-tab-3.svg" alt="">
+        <h3 class="tabcontent__h3">Share your bookmarks</h3>
+        <p class="tabcontent__paragraph"> Easily share your bookmarks and
+          collections with others. Create a
+          shareable
+          link that you can send at the click of a button.</p>
+        <a href="#" class="hero__link hero__link--chrome">
+          More info</a>
+      </div>
+    </section>
+
+    <!-- Download section -->
+    <section class="download">
+      <h2 class="download__h2">Download the extension</h2>
+      <p class="download__paragraph"> We’ve got more browsers in the pipeline.
+        Please do let us know if you’ve
+        got a favourite you’d like us to prioritize.</p>
+
+      <!-- Flex Container -->
+      <div class="download__cardsContainer">
+
+        <!-- Chrome -->
+        <div class="download__chrome download__card">
+          <img class="download__logo" src="/images/logo-chrome.svg"
+            alt="chrome logo">
+          <h3 class="download__title">Add to Chrome</h3>
+          <p class="download__version">Minimum version 62</p>
+          <img class="download__dots" src="/images/bg-dots.svg" alt="dots">
+          <a href="#" class="download__link">Add & Install Extension</a>
+        </div>
+
+        <!-- Firefox -->
+        <div class="download__firefox download__card">
+          <img class="download__logo" src="/images/logo-firefox.svg"
+            alt="firefox logo">
+          <h3 class="download__title">Add to Firefox</h3>
+          <p class="download__version">Minimum version 55</p>
+          <img class="download__dots" src="/images/bg-dots.svg" alt="dots">
+          <a href="#" class="download__link">Add & Install Extension</a>
+        </div>
+
+        <!-- Opera -->
+        <div class="download__opera download__card">
+          <img class="download__logo" src="/images/logo-opera.svg"
+            alt="opera logo">
+          <h3 class="download__title">Add to Opera</h3>
+          <p class="download__version">Minimum version 46</p>
+          <img class="download__dots" src="/images/bg-dots.svg" alt="dots">
+          <a href="#" class="download__link">Add & Install Extension</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ section -->
+    <section class="faq">
+      <h2 class="faq__h2">Frequently Asked Questions</h2>
+      <p class="faq__paragraph"> Here are some of our FAQs. If you have any
+        other questions you’d like
+        answered please feel free to email us.</p>
+
+      <!-- Question 1 -->
+      <button class="faq__accordion">What is Bookmark?</button>
+      <div class="faq__panel">
+        <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Fusce tincidunt justo eget ultricies fringilla.
+          Phasellus blandit ipsum quis quam ornare mattis.</p>
+      </div>
+
+      <!-- Question 2 -->
+      <button class="faq__accordion">How can I request a new browser?</button>
+      <div class="faq__panel">
+        <p class="faq__answer">Vivamus luctus eros aliquet convallis
+          ultricies. Mauris augue massa, ultricies non ligula.
+          Suspendisse imperdiet. Vivamus luctus eros aliquet convallis
+          ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
+          imperdie tVivamus luctus eros aliquet convallis ltricies. Mauris augue
+          massa, ultricies non ligula. Suspendisse imperdiet.</p>
+      </div>
+
+      <!-- Question 3 -->
+      <button class="faq__accordion">Is there a mobile app?</button>
+      <div class="faq__panel">
+        <p class="faq__answer">Sed consectetur quam id neque fermentum
+          accumsan. Praesent luctus vestibulum dolor, ut condimentum
+          urna vulputate eget. Cras in ligula quis est pharetra mattis sit
+          amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.</p>
+      </div>
+
+      <!-- Question 4 -->
+      <button class="faq__accordion">What about other Chromium
+        browsers?</button>
+      <div class="faq__panel">
+        <p class="faq__answer">Integer condimentum ipsum id imperdiet
+          finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque
+          eget nisl gravida pellentesque non ut velit.</p>
+      </div>
+      <a href="#" class="faq__link">
+        More info</a>
+  </div>
+  </section>
+  </div>
+
+  <br><br><br><br><br><br>
+  35,000+ already joined
+
+  Stay up-to-date with what we’re doing
+
+  Contact Us
+
+  Features
+  Pricing
+  Contact
+
+  <footer>
+
+  </footer>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+</body>
+
+</html>
