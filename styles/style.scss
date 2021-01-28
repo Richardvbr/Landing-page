@@ -40,36 +40,69 @@ body {
   align-items: center;
   margin-bottom: 1rem;
 
-  &__ul {
+  nav {
+    display: none;
+    transition: all 2s ease;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+  }
+
+  .mobile-menu-flex-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+  }
+
+  .mobile-menu-exit {
+    cursor: pointer;
+    width: 30px;
+  }
+
+  .mobile {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($color: #363e64, $alpha: .98);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 
   &__li {
-    padding: 0.5rem 1rem;
+    padding: 1.25rem 1rem;
     text-transform: uppercase;
-    color: $heading-color;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    font-weight: 500;
+    color: $background-color;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 300;
     cursor: pointer;
+    display: inline-block;
+    border-bottom: 1px solid rgba(124, 124, 124, 0.39);
+    width: 80vw;
 
-    &:hover {
-      color: $accent-color-red;
+    &:first-of-type {
+      border-top: 1px solid rgba(124, 124, 124, 0.39);
     }
 
     &--login {
+      display: inline-block;
       color: $background-color;
-      background-color: $accent-color-red;
+      border: 2px solid white;
       border-radius: 5px;
-      padding: 0.5rem 1.25rem;
-      margin-left: 1rem;
+      padding: 0.6rem 30vw;
       transition: .15s ease-in-out;
-
-      &:hover {
-        background-color: $background-color;
-        color: $accent-color-red;
-        box-shadow: 0 0 0 1px $accent-color-red;
-      }
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
   }
 }
@@ -102,7 +135,7 @@ body {
   &__paragraph {
     color: $text-color-grey;
     font-family: $main-font;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     line-height: $text-line-height;
     margin-top: -0.5rem;
@@ -164,7 +197,7 @@ body {
   &__paragraph {
     color: $text-color-grey;
     font-family: $main-font;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     line-height: $text-line-height;
     margin-top: -0.25rem;
@@ -221,7 +254,7 @@ body {
 
     &__paragraph {
       color: $text-color-grey;
-      font-size: 13px;
+      font-size: 15px;
       line-height: $text-line-height;
       margin-bottom: 1.5rem;
     }
@@ -242,7 +275,7 @@ body {
 
   &__paragraph {
     color: $text-color-grey;
-    font-size: 13px;
+    font-size: 15px;
     line-height: $text-line-height;
     margin-bottom: 1.5rem;
     margin-top: -0.25rem;
@@ -273,7 +306,7 @@ body {
 
   &__version {
     color: $text-color-grey;
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 2.5rem;
   }
 
@@ -306,7 +339,7 @@ body {
   &__paragraph {
     text-align: center;
     color: $text-color-grey;
-    font-size: 13px;
+    font-size: 15px;
     line-height: $text-line-height;
     margin-bottom: 2.5rem;
   }
@@ -323,7 +356,7 @@ body {
     transition: 0.4s;
     font-weight: 500;
     font-family: $main-font;
-    font-size: 13px;
+    font-size: 15px;
 
     &::before {
       content: '+';
@@ -358,7 +391,7 @@ body {
     display: none;
     overflow: hidden;
     margin-top: 1rem;
-    font-size: 14px;
+    font-size: 15px;
     color: #555;
     line-height: $text-line-height;
   }
@@ -366,7 +399,7 @@ body {
   &__link {
     margin-top: 2rem;
     padding: 0.75rem 1.25rem;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     border-radius: 5px;
     background-color: $accent-color-blue;
@@ -386,23 +419,24 @@ body {
 
 /* Large display styles */
 @media screen and (min-width: 1200px) {
-  .container {
-    width: 75vw;
-    margin: 0 auto;
-  }
-  
   .navbar {
     display: flex;
     width: 100%;
     height: 5rem;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    background-color: $background-color;
+    margin-bottom: 1rem;
+  
+    .mobile-menu {
+      cursor: pointer;
+    }
   
     &__ul {
-      display: flex;
+      display: none;
+    }
+  
+    &__ul.mobile {
+      display: block;
     }
   
     &__li {

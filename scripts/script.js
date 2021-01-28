@@ -42,3 +42,15 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+let mobileMenu = document.getElementById('mobile-open')
+let closeMenu = document.getElementById('mobile-exit')
+let nav = document.querySelector('nav')
+
+mobileMenu.addEventListener('click', () => {
+  nav.classList.add('mobile');
+})
+
+closeMenu.addEventListener('click', () => {
+  nav.classList.remove('mobile');
+})

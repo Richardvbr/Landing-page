@@ -41,41 +41,83 @@ body {
   margin-bottom: 1rem;
 }
 
-.navbar__ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.navbar nav {
+  display: none;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
 }
 
-.navbar__li {
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: #262b48;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  font-weight: 500;
+.navbar .mobile-menu {
   cursor: pointer;
 }
 
-.navbar__li:hover {
-  color: #ff5659;
+.navbar .mobile-menu-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+}
+
+.navbar .mobile-menu-exit {
+  cursor: pointer;
+  width: 30px;
+}
+
+.navbar .mobile {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(54, 62, 100, 0.98);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar__li {
+  padding: 1.25rem 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+  cursor: pointer;
+  display: inline-block;
+  border-bottom: 1px solid rgba(124, 124, 124, 0.39);
+  width: 80vw;
+}
+
+.navbar__li:first-of-type {
+  border-top: 1px solid rgba(124, 124, 124, 0.39);
 }
 
 .navbar__li--login {
+  display: inline-block;
   color: #ffffff;
-  background-color: #ff5659;
+  border: 2px solid white;
   border-radius: 5px;
-  padding: 0.5rem 1.25rem;
-  margin-left: 1rem;
+  padding: 0.6rem 30vw;
   -webkit-transition: .15s ease-in-out;
   transition: .15s ease-in-out;
-}
-
-.navbar__li--login:hover {
-  background-color: #ffffff;
-  color: #ff5659;
-  -webkit-box-shadow: 0 0 0 1px #ff5659;
-          box-shadow: 0 0 0 1px #ff5659;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .hero {
@@ -118,7 +160,7 @@ body {
 .hero__paragraph {
   color: #919191;
   font-family: "Rubik", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
   margin-top: -0.5rem;
@@ -192,7 +234,7 @@ body {
 .features__paragraph {
   color: #919191;
   font-family: "Rubik", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
   margin-top: -0.25rem;
@@ -248,7 +290,7 @@ body {
 
 .features .tabcontent__paragraph {
   color: #919191;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
@@ -272,7 +314,7 @@ body {
 
 .download__paragraph {
   color: #919191;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   margin-top: -0.25rem;
@@ -313,7 +355,7 @@ body {
 
 .download__version {
   color: #919191;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 2.5rem;
 }
 
@@ -355,7 +397,7 @@ body {
 .faq__paragraph {
   text-align: center;
   color: #919191;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 }
@@ -373,7 +415,7 @@ body {
   transition: 0.4s;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .faq__accordion::before {
@@ -408,7 +450,7 @@ body {
   display: none;
   overflow: hidden;
   margin-top: 1rem;
-  font-size: 14px;
+  font-size: 15px;
   color: #555;
   line-height: 1.5;
 }
@@ -416,7 +458,7 @@ body {
 .faq__link {
   margin-top: 2rem;
   padding: 0.75rem 1.25rem;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: 5px;
   background-color: #5266df;
@@ -427,10 +469,6 @@ body {
 /* Laptop styles */
 /* Large display styles */
 @media screen and (min-width: 1200px) {
-  .container {
-    width: 75vw;
-    margin: 0 auto;
-  }
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -443,15 +481,16 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  .navbar .mobile-menu {
+    cursor: pointer;
   }
   .navbar__ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
+  }
+  .navbar__ul.mobile {
+    display: block;
   }
   .navbar__li {
     padding: 0.5rem 1rem;
