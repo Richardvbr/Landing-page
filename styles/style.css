@@ -43,8 +43,33 @@ body {
 
 .navbar nav {
   display: none;
+  max-height: 0px;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
+}
+
+.navbar .mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  max-height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(54, 62, 100, 0.98);
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
 }
 
 .navbar .mobile-menu {
@@ -68,26 +93,6 @@ body {
 .navbar .mobile-menu-exit {
   cursor: pointer;
   width: 30px;
-}
-
-.navbar .mobile {
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(54, 62, 100, 0.98);
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .navbar__li {
@@ -155,12 +160,13 @@ body {
   color: #262b48;
   font-weight: 500;
   margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .hero__paragraph {
   color: #919191;
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.5;
   margin-top: -0.5rem;
@@ -234,7 +240,7 @@ body {
 .features__paragraph {
   color: #919191;
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.5;
   margin-top: -0.25rem;
@@ -261,7 +267,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 13px auto 0 auto;
+  margin: 14px auto 0 auto;
 }
 
 .features .active:after {
@@ -273,7 +279,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 13px auto 0 auto;
+  margin: 14px auto 0 auto;
 }
 
 .features .tabcontent img {
@@ -290,7 +296,7 @@ body {
 
 .features .tabcontent__paragraph {
   color: #919191;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
@@ -314,7 +320,7 @@ body {
 
 .download__paragraph {
   color: #919191;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   margin-top: -0.25rem;
@@ -355,7 +361,7 @@ body {
 
 .download__version {
   color: #919191;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 2.5rem;
 }
 
@@ -397,7 +403,7 @@ body {
 .faq__paragraph {
   text-align: center;
   color: #919191;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 }
@@ -415,7 +421,7 @@ body {
   transition: 0.4s;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .faq__accordion::before {
@@ -450,7 +456,7 @@ body {
   display: none;
   overflow: hidden;
   margin-top: 1rem;
-  font-size: 15px;
+  font-size: 16px;
   color: #555;
   line-height: 1.5;
 }
@@ -463,6 +469,154 @@ body {
   border-radius: 5px;
   background-color: #5266df;
   color: #ffffff;
+}
+
+.cta {
+  margin-top: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: #5266df;
+  padding: 4rem 2rem;
+}
+
+.cta__paragraph {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: -0.5rem;
+}
+
+.cta__h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.cta__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cta__form input[type=text] {
+  padding: 15px;
+  border-radius: 7px;
+  border: none;
+}
+
+.cta__form input[type=text]::-webkit-input-placeholder {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.cta__form input[type=text]:-ms-input-placeholder {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.cta__form input[type=text]::-ms-input-placeholder {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.cta__form input[type=text]::placeholder {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.cta__form input[type=submit] {
+  border: none;
+  background-color: #ff5659;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 1rem;
+  border-radius: 7px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #272c46;
+  padding: 2.5rem;
+}
+
+.footer img {
+  margin-bottom: 1.5rem;
+}
+
+.footer__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.footer__ul a {
+  color: #d1d1d1;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  padding: 15px;
+}
+
+.footer__ul a:hover {
+  color: #ff5659;
+}
+
+.footer__social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__social-icons a {
+  margin: 0 20px;
+}
+
+.footer__social-icons a img {
+  margin: 0;
 }
 
 /* Tablet styles */

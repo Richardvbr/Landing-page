@@ -43,14 +43,18 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// Toggle mobile menu and disable body scrolling while mobile menu is open
 let mobileMenu = document.getElementById('mobile-open')
 let closeMenu = document.getElementById('mobile-exit')
 let nav = document.querySelector('nav')
+let body = document.querySelector('body')
 
 mobileMenu.addEventListener('click', () => {
   nav.classList.add('mobile');
+  body.style.overflowY = 'hidden';
 })
 
 closeMenu.addEventListener('click', () => {
   nav.classList.remove('mobile');
+  body.style.overflowY = 'visible';
 })
