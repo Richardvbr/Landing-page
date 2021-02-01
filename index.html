@@ -82,13 +82,15 @@
         Your bookmarks sync between your devices so you can access them on the
         go.</p>
       <!-- Clickable tabs that reveal content -->
-      <div class="features__bookmarking tablinks" id="defaultOpen"
-        onclick="openTabs(event, 'Bookmarking')">Simple Bookmarking</div>
-      <div class="features__searching tablinks"
-        onclick="openTabs(event, 'Searching')">Speedy Searching</div>
-      <div class="features__sharing tablinks"
-        onclick="openTabs(event, 'Sharing')">
-        Easy Sharing</div>
+      <div class="features__flex">
+        <div class="features__bookmarking tablinks" id="defaultOpen"
+          onclick="openTabs(event, 'Bookmarking')">Simple Bookmarking</div>
+        <div class="features__searching tablinks"
+          onclick="openTabs(event, 'Searching')">Speedy Searching</div>
+        <div class="features__sharing tablinks"
+          onclick="openTabs(event, 'Sharing')">
+          Easy Sharing</div>
+      </div>
 
       <!-- Bookmarking -->
       <div id="Bookmarking" class="tabcontent">
@@ -215,8 +217,8 @@
       </div>
       <a href="#" class="faq__link">
         More info</a>
+    </section>
   </div>
-  </section>
 
   <!-- Call to action -->
   <section class="cta">
@@ -233,21 +235,26 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <img src="/images/footer-logo.svg" alt="bookmark logo">
-    <ul class="footer__ul">
-      <a href="#">
-        <li class="footer__li">Features</li>
-      </a>
-      <a href="#">
-        <li class="footer__li">Pricing</li>
-      </a>
-      <a href="#">
-        <li class="footer__li">Contact</li>
-      </a>
-    </ul>
-    <div class="footer__social-icons">
-      <a href="#"><img src="/images/icon-facebook.svg" alt="Facebook icon"></a>
-      <a href="#"><img src="/images/icon-twitter.svg" alt="Twitter icon"></a>
+    <div class="footer__left">
+      <img src="/images/footer-logo.svg" alt="bookmark logo">
+      <ul class="footer__ul">
+        <a href="#">
+          <li class="footer__li">Features</li>
+        </a>
+        <a href="#">
+          <li class="footer__li">Pricing</li>
+        </a>
+        <a href="#">
+          <li class="footer__li">Contact</li>
+        </a>
+      </ul>
+    </div>
+    <div class="footer__right">
+      <div class="footer__social-icons">
+        <a href="#"><img src="/images/icon-facebook.svg"
+            alt="Facebook icon"></a>
+        <a href="#"><img src="/images/icon-twitter.svg" alt="Twitter icon"></a>
+      </div>
     </div>
   </footer>
 
