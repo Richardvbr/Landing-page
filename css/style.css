@@ -1435,7 +1435,7 @@ body {
     border-bottom-left-radius: 50%;
   }
   .container .faq__paragraph {
-    max-width: 50ch;
+    max-width: 45ch;
     margin: 0 auto 2.5rem;
   }
   .container .faq__accordion {
@@ -1443,6 +1443,11 @@ body {
   }
   .container .faq__accordion::after {
     width: 30%;
+  }
+  .container .faq__panel {
+    width: 45ch;
+    text-align: left;
+    margin-bottom: 0.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

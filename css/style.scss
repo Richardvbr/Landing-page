@@ -1319,7 +1319,7 @@ body {
     // START :: Faq section
     .faq {        
       &__paragraph {
-        max-width: 50ch;
+        max-width: 45ch;
         margin: 0 auto 2.5rem;
       }
     
@@ -1329,6 +1329,12 @@ body {
         &::after {
           width: 30%;
         }
+      }
+
+      &__panel {
+        width: 45ch;
+        text-align: left;
+        margin-bottom: 0.5rem;
       }
     } // END :: Faq section
   }
