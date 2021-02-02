@@ -39,7 +39,7 @@ body {
   height: 5rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 
   nav {
     display: none;
@@ -52,7 +52,7 @@ body {
   nav {
     position: fixed;
     z-index: 10;
-    max-height: 100%;
+    max-height: 100vh;
     top: 0;
     right: 0;
     bottom: 0;
@@ -125,7 +125,7 @@ body {
 
   &__img img {
     order: 1;
-    width: 360px;
+    width: 325px;
     margin-top: 1rem;
   }
 
@@ -146,14 +146,14 @@ body {
   }
 
   &__links {
-    display: flex;
-    justify-content: space-between;
+    margin-top: 2rem;
+    display: inline-block;
   }
 
   &__link {
     margin-top: 1.5rem;
     padding: 0.75rem 1.25rem;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     border-radius: 5px;
 
@@ -195,7 +195,7 @@ body {
 .hero__bgshape {
   width: 290px;
   height: 200px;
-  top: 165px;
+  top: 145px;
   right: 0px;
   border-bottom-left-radius: 50%;
 }
@@ -464,6 +464,7 @@ body {
   }
 
   &__panel {
+    transition: 0.2s ease;
     padding: 0 18px;
     background-color: white;
     display: none;
@@ -611,20 +612,345 @@ body {
   }
 } // END :: Footer section
 
-/* Tablet styles */
-@media screen and (min-width: 620px) {
+// Small tablet styles
+@media screen and (min-width: 500px) {
+// START :: Hero section
+.hero {
+  &__text {
+    order: 2;
+  }
 
+  &__img img {
+    width: 425px;
+  }
+
+  &__paragraph {
+    max-width: 35ch;
+    margin: -.5rem auto 0;
+  }
+
+  &__links {
+    margin-top: 2rem;
+    display: block;
+  }
+} // END :: Hero section
+
+.hero__bgshape {
+  width: 290px;
+  height: 200px;
+  top: 200px;
+  right: 0px;
+  border-bottom-left-radius: 50%;
+}
 }
 
-/* Laptop styles */
-@media screen and (min-width: 960px) {
-  
-}
-
-/* Large display styles */
-@media screen and (min-width: 1200px) {
+/* Large tablet styles */
+@media screen and (min-width: 765px) {
   .container {
-    max-width: 60vw;
+    max-width: 80vw;
+
+    // START :: Navbar section
+    .navbar {
+      display: flex;
+      top: 0;
+      z-index: 20;
+      flex-direction: row;
+      height: 5rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      background-color: $background-color;
+  
+      nav {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: $background-color;
+      }
+    
+      .mobile-menu,
+      .mobile-menu-logo,
+      .mobile-menu-exit,
+      .mobile-menu-flex-container {
+        display: none;
+      }
+    
+      &__ul {
+        display: flex;
+        flex-direction: row;
+      }
+    
+      &__li {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-transform: uppercase;
+        color: $heading-color;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        cursor: pointer;
+        border: none;
+  
+        &:first-of-type {
+          border: none;
+        }
+    
+        &:hover {
+          color: $accent-color-red;
+        }
+    
+        &--login {
+          display: block;
+          color: $background-color;
+          background-color: $accent-color-red;
+          border: 2px solid rgba(255, 255, 255, 0);
+          border-radius: 5px;
+          padding: 0.6rem 1.5rem;
+          margin-top: 0;
+          margin-left: 20px;
+          letter-spacing: 1px;
+          font-size: 13px;
+          transition: .2s ease-in-out;
+    
+          &:hover {
+            background-color: $background-color;
+            color: $accent-color-red;
+            border: 2px solid $accent-color-red;
+          }
+        }
+      }
+    } // END :: Navbar section
+
+    // START :: Hero section
+    .hero {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      margin-bottom: 10rem;
+      align-items: center;
+      text-align: center;
+    
+      &__text {
+        position: relative;
+        min-width: 50ch;
+        order: 1;
+        flex: 1;
+        margin: 0 auto;
+      }
+
+      &__paragraph {
+        width: 45ch;
+        margin: 0 auto;
+      }
+    
+      &__img img {
+        display: block;
+        width: 500px;
+      }
+    
+      &__h1 {
+        color: $heading-color;
+        font-weight: 500;
+        margin-top: 2rem;
+        font-size: 3rem;
+        width: 20ch;
+      }
+    
+      &__links {
+        display: block;
+        margin-top: 2rem;
+      }
+    
+      &__link {
+        padding: 0.85rem 1.25rem;
+        font-size: 13px;
+        letter-spacing: .5px;
+    
+        &--chrome {
+          margin-right: 20px;
+        }
+      }
+    } // END :: Hero section
+
+    .hero__bgshape {
+      width: 475px;
+      height: 300px;
+      top: 225px;
+      right: 0px;
+      border-bottom-left-radius: 50%;
+    }
+
+    // START :: Features section
+    .features {
+      align-items: center;
+      display: block;
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+
+      .features__flex {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+    
+      &__h2 {
+        margin-top: 8rem;
+      }
+    
+      &__paragraph {
+        max-width: 50ch;
+        margin: -.25rem auto 2rem;
+      }
+    
+      .tablinks {
+        width: 33%;
+    
+        &:first-of-type {
+          border-top: none;
+        }
+      
+        &:hover::after {
+          width: 20%;
+          display: block;
+          margin: 14px auto 0 auto;
+        }
+      }
+      .active:after {
+        width: 20%;
+        display: block;
+        position: absolute;
+        margin: 14px auto 0 auto;
+      }
+    
+      .tabcontent {
+        display: flex;
+        text-align: center;
+    
+        img {
+          width: 50%;
+          margin-top: 4.5rem;
+        }
+    
+        &__paragraph {
+          max-width: 50ch;
+          margin: 0 auto 1.5rem;
+        }
+      }
+    } // END :: Features section
+
+    // START :: Download section
+    .download {
+      margin-top: 12rem;
+    
+      &__paragraph {
+        margin: -.25rem auto 1.5rem;
+        max-width: 50ch;
+      }
+    
+      &__cardsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 335px);
+        grid-gap: 1rem;
+      }
+
+      &__chrome {
+        margin: 0;
+      }
+
+      &__firefox {
+        margin: 0;
+      }
+    
+      &__card {
+        width: 300px;
+      }
+    } // END :: Download section
+
+    // START :: Faq section
+    .faq {    
+      &__paragraph {
+        max-width: 50ch;
+        margin: 0 auto 2.5rem;
+      }
+    
+      &__accordion {
+        width: 75%;
+    
+        &::after {
+          width: 60%;
+          margin: 13px auto;;
+        }
+      }
+    
+      &__panel {
+        width: 45ch;
+        text-align: left;
+        margin-bottom: 0.5rem;
+      }
+    } // END :: Faq section
+  }
+
+  // START :: CTA section
+  .cta {
+  
+    &__form {
+      width: 65%;
+      margin: 0 auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  
+      input[type=text] {
+        width: 25ch;
+        height: 1rem;
+        margin-right: 1rem;
+      }
+  
+      input[type=submit] {
+        margin-top: 0;
+        padding: 0.9rem 1.5rem;
+      }
+    }
+  } // END :: CTA section
+
+  // START :: Footer section
+  .footer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2rem 1rem 2.75rem;
+  
+    img {
+      margin: 0 1.5rem 0 0;
+    }
+
+    &__left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__ul {
+      flex-direction: row;
+      margin: 0;
+      
+      li {
+        font-size: 13px;
+      }
+    }
+  } // END :: Footer section
+}
+
+// Small laptop
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 80vw;
 
     // START :: Navbar section
     .navbar {
@@ -716,6 +1042,236 @@ body {
         min-width: 50ch;
         order: 1;
         flex: 1;
+        text-align: left;
+      }
+
+      &__paragraph {
+        width: 45ch;
+        text-align: left;
+        margin: 0;
+      }
+    
+      &__img img {
+        display: block;
+        width: 450px;
+        margin-right: -100px;
+      }
+    
+      &__h1 {
+        color: $heading-color;
+        font-weight: 500;
+        margin-top: 2rem;
+        font-size: 3rem;
+        width: 20ch;
+      }
+    
+      &__links {
+        display: block;
+        margin-top: 2rem;
+      }
+    
+      &__link {
+        padding: 0.85rem 1.25rem;
+        font-size: 13px;
+        letter-spacing: .5px;
+    
+        &--chrome {
+          margin-right: 20px;
+        }
+      }
+    } // END :: Hero section
+
+    .hero__bgshape {
+      width: 350px;
+      height: 300px;
+      top: 320px;
+      right: 0px;
+      border-bottom-left-radius: 50%;
+    }
+
+    // START :: Download section
+    .download {
+      margin-top: 12rem;
+    
+      &__paragraph {
+        margin: -.25rem auto 1.5rem;
+        max-width: 50ch;
+      }
+    
+      &__cardsContainer {
+        display: flex;
+        flex-direction: row;
+      }
+    
+      &__card {
+        box-shadow: 0px 0px 20px -10px rgb(128, 128, 128);
+        padding: 4rem 1rem 3rem 1rem;
+        width: 300px;
+        margin: -4rem 2rem 2rem 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &__firefox {
+        margin-top: 2rem;
+      }
+
+      &__opera {
+        margin-top: 8rem;
+      }
+    
+      &__title {
+        margin-bottom: .5rem;
+      }
+    
+      &__version {
+        color: $text-color-grey;
+        font-size: 17px;
+        margin-bottom: 2.5rem;
+      }
+
+      &__link {
+        font-size: 13px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    } // END :: Download section
+
+    // START :: Faq section
+    .faq {
+      text-align: center;
+      margin: 0 auto;
+    
+      &__paragraph {
+        max-width: 50ch;
+        margin: 0 auto 2.5rem;
+      }
+    
+      &__accordion {
+        width: 55%;
+    
+        &::after {
+          width: 45%;
+          margin: 13px auto;;
+        }
+      }
+    
+      &__panel {
+        width: 40ch;
+        text-align: left;
+        margin-bottom: 0.5rem;
+      }
+    } // END :: Faq section
+  }
+
+}
+
+/* Laptop styles */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 75vw;
+
+    // START :: Hero section
+    .hero {
+      min-width: 100%;
+      display: inline-flex;
+      flex-direction: row-reverse;
+      margin: 0 auto;
+      margin-bottom: 10rem;
+      align-items: center;
+      text-align: left;
+    
+      &__text {
+        position: absolute;
+        left: 0;
+        min-width: 50ch;
+        order: 1;
+        flex: 1;
+      }
+
+      &__paragraph {
+        width: 45ch;
+      }
+    
+      &__img img {
+        display: block;
+        width: 500px;
+        margin-right: -100px;
+      }
+    
+      &__h1 {
+        color: $heading-color;
+        font-weight: 500;
+        margin-top: 2rem;
+        font-size: 3rem;
+        width: 20ch;
+      }
+    
+      &__links {
+        display: block;
+        margin-top: 2rem;
+      }
+    
+      &__link {
+        padding: 0.85rem 1.25rem;
+        font-size: 13px;
+        letter-spacing: .5px;
+    
+        &--chrome {
+          margin-right: 20px;
+        }
+      }
+    } // END :: Hero section
+
+    .hero__bgshape {
+      width: 450px;
+      height: 360px;
+      top: 320px;
+      right: 0px;
+      border-bottom-left-radius: 50%;
+    }
+
+    // START :: Faq section
+    .faq {        
+      &__paragraph {
+        max-width: 50ch;
+        margin: 0 auto 2.5rem;
+      }
+    
+      &__accordion {
+        width: 45%;
+    
+        &::after {
+          width: 30%;
+        }
+      }
+    } // END :: Faq section
+  }
+}
+
+/* Large display styles */
+@media screen and (min-width: 1450px) {
+  .container {
+    max-width: 60vw;
+
+    // START :: Hero section
+    .hero {
+      min-width: 100%;
+      display: inline-flex;
+      flex-direction: row-reverse;
+      margin: 0 auto;
+      margin-bottom: 10rem;
+      align-items: center;
+      text-align: left;
+    
+      &__text {
+        position: absolute;
+        left: 0;
+        min-width: 50ch;
+        order: 1;
+        flex: 1;
       }
 
       &__paragraph {
@@ -760,194 +1316,20 @@ body {
       border-bottom-left-radius: 50%;
     }
 
-    // START :: Features section
-    .features {
-      align-items: center;
-      display: block;
-      flex-direction: row;
-      justify-content: center;
-      text-align: center;
-
-      .features__flex {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-      }
-    
-      &__h2 {
-        margin-top: 8rem;
-      }
-    
-      &__paragraph {
-        max-width: 50ch;
-        margin: -.25rem auto 2rem;
-      }
-    
-      .tablinks {
-        width: 33%;
-    
-        &:first-of-type {
-          border-top: none;
-        }
-      
-        &:hover::after {
-          width: 20%;
-          display: block;
-          margin: 14px auto 0 auto;
-        }
-      }
-      .active:after {
-        width: 20%;
-        display: block;
-        position: absolute;
-        margin: 14px auto 0 auto;
-      }
-    
-      .tabcontent {
-        display: flex;
-        text-align: center;
-    
-        img {
-          width: 50%;
-          margin-top: 4.5rem;
-        }
-    
-        &__paragraph {
-          max-width: 50ch;
-          margin: 0 auto 1.5rem;
-        }
-      }
-    } // END :: Features section
-
-    // START :: Download section
-    .download {
-      margin-top: 12rem;
-    
-      &__paragraph {
-        margin: -.25rem auto 1.5rem;
-        max-width: 50ch;
-      }
-    
-      &__cardsContainer {
-        display: flex;
-        flex-direction: row;
-      }
-    
-      &__card {
-        box-shadow: 0px 0px 20px -10px rgb(128, 128, 128);
-        padding: 4rem 1rem 3rem 1rem;
-        width: 300px;
-        margin: -4rem 2rem 2rem 0;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      &__firefox {
-        margin-top: 2rem;
-      }
-
-      &__opera {
-        margin-top: 8rem;
-      }
-    
-      &__title {
-        margin-bottom: .5rem;
-      }
-    
-      &__version {
-        color: $text-color-grey;
-        font-size: 17px;
-        margin-bottom: 2.5rem;
-      }
-    } // END :: Download section
-
     // START :: Faq section
-    .faq {
-      text-align: center;
-      margin: 0 auto;
-    
+    .faq {        
       &__paragraph {
         max-width: 50ch;
         margin: 0 auto 2.5rem;
       }
     
       &__accordion {
-        width: 50%;
+        width: 45%;
     
         &::after {
           width: 30%;
-          margin: 13px auto;;
         }
-      }
-    
-      &__panel {
-        width: 55ch;
-        text-align: left;
-        margin-bottom: 0.5rem;
       }
     } // END :: Faq section
   }
-
-  // START :: CTA section
-  .cta {
-    margin-top: 7rem;
-  
-    &__form {
-      width: 30%;
-      margin: 0 auto;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-  
-      input[type=text] {
-        width: 25ch;
-        height: 1rem;
-        margin-right: 1rem;
-      }
-  
-      input[type=submit] {
-        margin-top: 0;
-        padding: 0.9rem 1.5rem;
-      }
-    }
-  } // END :: CTA section
-
-  // START :: Footer section
-  .footer {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.4rem 19.5% 1rem;
-  
-    img {
-      margin: 0 1.5rem 0 0;
-    }
-
-    &__left {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    &__ul {
-      flex-direction: row;
-      margin: 0;
-    }
-  
-    &__social-icons {
-  
-      a {
-        margin: 0 20px;
-  
-        img {
-          display: block;
-          margin: 0;
-        }
-      }
-    }
-  } // END :: Footer section
 }
