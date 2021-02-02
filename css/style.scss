@@ -32,7 +32,7 @@ body {
   align-items: center;
 }
 
-// Navigation
+// START :: Navbar section
 .navbar {
   display: flex;
   width: 100%;
@@ -102,15 +102,14 @@ body {
       border: 2px solid white;
       border-radius: 5px;
       padding: 0.6rem 30vw;
-      transition: .15s ease-in-out;
       margin-top: 1.5rem;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
   }
-}
+} // END :: Navbar section
 
-// Hero section
+// START :: Hero section
 .hero {
   width: 100%;
   display: flex;
@@ -162,14 +161,30 @@ body {
     &--chrome {
       color:  $background-color;
       background-color: $accent-color-blue;
+      margin-right: 20px;
+      transition: 0.2s ease-in-out;
+      border: 2px solid rgba(51, 51, 51, 0);
+
+      &:hover {
+        border: 2px solid $accent-color-blue;
+        background-color: $background-color;
+        color: $accent-color-blue;
+      }
     }
 
     &--firefox {
       color: $heading-color;
       background-color: rgb(243, 242, 236);
+      transition: 0.2s ease-in-out;
+      border: 2px solid rgba(51, 51, 51, 0);
+
+      &:hover {
+        border: 2px solid #555;
+        background-color: $background-color;
+      }
     }
   }
-}
+} // END :: Hero section
 
 .shape {
   position: absolute;
@@ -185,7 +200,7 @@ body {
   border-bottom-left-radius: 50%;
 }
 
-// Features section
+// START :: Features section
 .features {
   align-items: center;
   display: block;
@@ -219,20 +234,22 @@ body {
     margin-bottom: 2rem;
   }
 
-
-
   .tablinks {
     width: 100%;
     padding: 1.1rem 0;
     border-bottom: 1px solid rgb(211, 211, 211);
     cursor: pointer;
 
+    &:hover {
+      color: $accent-color-red;
+    }
+
     &:first-of-type {
       border-top: none;
     }
   
     &:hover::after {
-      width: 100%;
+      width: 85%;
       height: 4px;
       background-color: $accent-color-red;
       content: '';
@@ -241,8 +258,13 @@ body {
       margin: 14px auto 0 auto;
     }
   }
+  
+  .active {
+    color: $accent-color-red;
+  }
+
   .active:after {
-    width: 100%;
+    width: 85%;
     height: 4px;
     background-color: $accent-color-red;
     content: '';
@@ -251,11 +273,9 @@ body {
     margin: 14px auto 0 auto;
   }
 
-  .tabcontent {
-    
-
+  .tabcontent {  
     img {
-      max-width: 500px;
+      max-width: 85%;
       margin-top:4.5rem;
       z-index: -1;
     }
@@ -271,10 +291,27 @@ body {
       line-height: $text-line-height;
       margin-bottom: 1.5rem;
     }
-  }
-}
 
-// Download section
+    &__link {
+      padding: 0.75rem 1.25rem;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 5px;
+      color: $background-color;
+      background-color: $accent-color-blue;
+      transition: 0.2s ease-in-out;
+      border: 2px solid rgba(51, 51, 51, 0);
+
+      &:hover {
+        border: 2px solid $accent-color-blue;
+        background-color: $background-color;
+        color: $accent-color-blue;
+      }
+    }
+  }
+} // END :: Features section
+
+// START :: Download section
 .download {
   margin-top: 8rem;
   align-items: center;
@@ -320,7 +357,7 @@ body {
 
   &__version {
     color: $text-color-grey;
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 2.5rem;
   }
 
@@ -331,14 +368,24 @@ body {
 
   &__link {
     background-color: $accent-color-blue;
+    font-size: 14px;
+    font-weight: 500;
     padding: .8rem 2rem;
     color: $background-color;
     font-size: 0.9rem;
     border-radius: 5px;
-  }
-}
+    transition: 0.2s ease-in-out;
+    border: 2px solid rgba(51, 51, 51, 0);
 
-// FAQ section
+    &:hover {
+      border: 2px solid $accent-color-blue;
+      background-color: $background-color;
+      color: $accent-color-blue;
+    }
+  }
+} // END :: Download section
+
+// START :: FAQ section
 .faq {
   display: flex;
   flex-direction: column;
@@ -369,18 +416,32 @@ body {
     text-align: left;
     border: none;
     outline: none;
-    transition: 0.4s;
+    transition: .2s ease-in-out;
     font-weight: 500;
     font-family: $main-font;
     font-size: 17px;
 
+    &:hover {
+      color: $accent-color-red;
+    }
+
     &::before {
-      content: '+';
       font-size: 20px;
       color: $accent-color-blue;
-      font-weight: bold;
       margin-left: 5px;
       float: right;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f078";
+      transition: .2s ease;
+    }
+
+    &:hover:before {
+      color: $accent-color-red;
     }
 
     &::after {
@@ -397,7 +458,8 @@ body {
   }
 
   .active::before {
-    content: '-';
+    content: '\f078';
+    transform: rotate(180deg);
     color: $accent-color-red;
   }
 
@@ -415,15 +477,23 @@ body {
   &__link {
     margin-top: 2rem;
     padding: 0.75rem 1.25rem;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     border-radius: 5px;
-    background-color: $accent-color-blue;
     color: $background-color;
-  }
-}
+    background-color: $accent-color-blue;
+    transition: 0.2s ease-in-out;
+    border: 2px solid rgba(51, 51, 51, 0);
 
-// CTA section
+    &:hover {
+      border: 2px solid $accent-color-blue;
+      background-color: $background-color;
+      color: $accent-color-blue;
+    }
+  }
+} // END :: FAQ section
+
+// START :: CTA section
 .cta {
   margin-top: 7rem;
   display: flex;
@@ -466,7 +536,7 @@ body {
     }
 
     input[type=submit] {
-      border: none;
+      border: 2px solid rgba(51, 51, 51, 0);
       background-color: $accent-color-red;
       padding: 1rem 2rem;
       color: white;
@@ -474,11 +544,19 @@ body {
       font-size: 14px;
       margin-top: 1rem;
       border-radius: 7px;
+      transition: .2s ease-in-out;
+      cursor: pointer;
+    
+      &:hover {
+        background-color: $background-color;
+        color: $accent-color-red;
+        border: 2px solid $accent-color-red;
+      }
     }
   }
-}
+} // END :: CTA section
 
-// Footer
+// START :: Footer section
 .footer {
   display: flex;
   flex-direction: column;
@@ -490,6 +568,7 @@ body {
 
   img {
     margin-bottom: 1.5rem;
+    cursor: pointer;
   }
 
   &__ul {
@@ -507,6 +586,7 @@ body {
 
       &:hover {
         color: $accent-color-red;
+        cursor: pointer;
       }
     }
   }
@@ -521,10 +601,15 @@ body {
 
       img {
         margin: 0;
+
+        &:hover {
+          fill: red;
+          cursor: pointer;
+        }
       }
     }
   }
-}
+} // END :: Footer section
 
 /* Tablet styles */
 @media screen and (min-width: 620px) {
@@ -541,6 +626,7 @@ body {
   .container {
     max-width: 60vw;
 
+    // START :: Navbar section
     .navbar {
       display: flex;
       top: 0;
@@ -599,11 +685,11 @@ body {
           border: 2px solid rgba(255, 255, 255, 0);
           border-radius: 5px;
           padding: 0.6rem 1.5rem;
-          transition: .2s ease-in-out;
           margin-top: 0;
           margin-left: 20px;
           letter-spacing: 1px;
           font-size: 13px;
+          transition: .2s ease-in-out;
     
           &:hover {
             background-color: $background-color;
@@ -612,8 +698,9 @@ body {
           }
         }
       }
-    }
+    } // END :: Navbar section
 
+    // START :: Hero section
     .hero {
       min-width: 100%;
       display: inline-flex;
@@ -655,40 +742,15 @@ body {
       }
     
       &__link {
-        margin-top: 1.5rem;
         padding: 0.85rem 1.25rem;
         font-size: 13px;
         letter-spacing: .5px;
-        font-weight: 500;
-        border-radius: 5px;
     
         &--chrome {
-          color:  $background-color;
-          background-color: $accent-color-blue;
           margin-right: 20px;
-          transition: 0.2s ease-in-out;
-          border: 2px solid rgba(51, 51, 51, 0);
-
-          &:hover {
-            border: 2px solid $accent-color-blue;
-            background-color: $background-color;
-            color: $accent-color-blue;
-          }
-        }
-    
-        &--firefox {
-          color: $heading-color;
-          background-color: rgb(243, 242, 236);
-          transition: 0.2s ease-in-out;
-          border: 2px solid rgba(51, 51, 51, 0);
-
-          &:hover {
-            border: 2px solid #555;
-            background-color: $background-color;
-          }
         }
       }
-    }
+    } // END :: Hero section
 
     .hero__bgshape {
       width: 650px;
@@ -698,6 +760,7 @@ body {
       border-bottom-left-radius: 50%;
     }
 
+    // START :: Features section
     .features {
       align-items: center;
       display: block;
@@ -754,8 +817,9 @@ body {
           margin: 0 auto 1.5rem;
         }
       }
-    }
+    } // END :: Features section
 
+    // START :: Download section
     .download {
       margin-top: 12rem;
     
@@ -797,19 +861,9 @@ body {
         font-size: 17px;
         margin-bottom: 2.5rem;
       }
+    } // END :: Download section
 
-      &__link {
-        transition: 0.2s ease-in-out;
-        border: 2px solid rgba(51, 51, 51, 0);
-
-        &:hover {
-          border: 2px solid $accent-color-blue;
-          background-color: $background-color;
-          color: $accent-color-blue;
-        }
-      }
-    }
-
+    // START :: Faq section
     .faq {
       text-align: center;
       margin: 0 auto;
@@ -833,13 +887,12 @@ body {
         text-align: left;
         margin-bottom: 0.5rem;
       }
-    }
+    } // END :: Faq section
   }
 
+  // START :: CTA section
   .cta {
     margin-top: 7rem;
-    text-align: center;
-    padding: 4rem 2rem;
   
     &__form {
       width: 30%;
@@ -856,17 +909,19 @@ body {
   
       input[type=submit] {
         margin-top: 0;
+        padding: 0.9rem 1.5rem;
       }
     }
-  }
+  } // END :: CTA section
 
+  // START :: Footer section
   .footer {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 19.5%;
+    padding: 1.4rem 19.5% 1rem;
   
     img {
       margin: 0 1.5rem 0 0;
@@ -894,5 +949,5 @@ body {
         }
       }
     }
-  }
+  } // END :: Footer section
 }

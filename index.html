@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32"
     href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href=/styles/style.css>
+  <link rel="stylesheet" href=/css/style.css>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
@@ -15,10 +15,10 @@
 </head>
 
 <body>
-  <!-- Main container -->
+  <!-- START :: Main container -->
   <div class="container">
 
-    <!-- Navbar -->
+    <!-- START :: Navbar -->
     <div class="navbar">
       <div class="navbar__logo">
         <a href="#"><img src="/images/logo-bookmark.svg"
@@ -48,8 +48,9 @@
         </a>
       </nav>
     </div>
+    <!-- END :: Navbar section -->
 
-    <!-- Hero section -->
+    <!-- START :: Hero section -->
     <section class="hero">
       <div class="hero__text">
         <h1 class="hero__h1">A Simple Bookmark Manager</h1>
@@ -69,11 +70,12 @@
         <img src="/images/illustration-hero.svg" alt="hero illustration">
       </div>
     </section>
+    <!-- END :: Hero section -->
 
     <!-- Background shape hero section -->
     <div class="shape hero__bgshape"></div>
 
-    <!-- Features section -->
+    <!-- START :: Features section -->
     <section class="features">
       <h2 class="features__h2">Features</h2>
       <p class="features__paragraph"> Our aim is to make it quick and easy for
@@ -101,7 +103,7 @@
           interface
           gives you complete control over how you manage your favourite sites.
         </p>
-        <a href="#" class="hero__link hero__link--chrome">
+        <a href="#" class="tabcontent__link">
           More info</a>
       </div>
 
@@ -113,7 +115,7 @@
           you find saved sites in no time
           at all.
           No need to trawl through all of your bookmarks.</p>
-        <a href="#" class="hero__link hero__link--chrome">
+        <a href="#" class="tabcontent__link">
           More info</a>
       </div>
 
@@ -125,12 +127,13 @@
           collections with others. Create a
           shareable
           link that you can send at the click of a button.</p>
-        <a href="#" class="hero__link hero__link--chrome">
+        <a href="#" class="tabcontent__link">
           More info</a>
       </div>
     </section>
+    <!-- END :: Features section -->
 
-    <!-- Download section -->
+    <!-- START :: Download section -->
     <section class="download">
       <h2 class="download__h2">Download the extension</h2>
       <p class="download__paragraph"> We’ve got more browsers in the pipeline.
@@ -171,8 +174,9 @@
         </div>
       </div>
     </section>
+    <!-- END :: Download section -->
 
-    <!-- FAQ section -->
+    <!-- START :: FAQ section -->
     <section class="faq">
       <h2 class="faq__h2">Frequently Asked Questions</h2>
       <p class="faq__paragraph"> Here are some of our FAQs. If you have any
@@ -218,9 +222,11 @@
       <a href="#" class="faq__link">
         More info</a>
     </section>
+    <!-- END :: FAQ section -->
   </div>
+  <!-- END :: Container -->
 
-  <!-- Call to action -->
+  <!-- START :: Call to action section -->
   <section class="cta">
     <p class="cta__paragraph">35.000+ already joined</p>
     <h2 class="cta__h2">Stay up-to-date with what we're doing</h2>
@@ -231,9 +237,9 @@
         class="cta__form-submit">
     </form>
   </section>
-  </div>
+  <!-- END :: Cta section -->
 
-  <!-- Footer -->
+  <!-- START :: Footer -->
   <footer class="footer">
     <div class="footer__left">
       <img src="/images/footer-logo.svg" alt="bookmark logo">
@@ -257,8 +263,11 @@
       </div>
     </div>
   </footer>
+  <!-- END :: Footer -->
 
   <script type="text/javascript" src="/scripts/script.js"></script>
+  <script src="https://kit.fontawesome.com/05fc138685.js"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
