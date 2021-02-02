@@ -1405,8 +1405,8 @@ body {
   }
   .container .hero__img img {
     display: block;
-    width: 550px;
-    margin-right: -100px;
+    width: 625px;
+    margin-right: -200px;
   }
   .container .hero__h1 {
     color: #262b48;
